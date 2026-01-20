@@ -1,6 +1,7 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+/* Tailwind directives correctes */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Palette Coolors : F9DBBD, FFA5AB, DA627D, A53860, 450920 */
 :root {
