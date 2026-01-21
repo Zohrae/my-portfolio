@@ -37,28 +37,26 @@ const Navbar = () => {
           : "bg-white/70 backdrop-blur-md"
       }`}
     >
-      {/* ⬇ increased height here */}
-      <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
-        
+      <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-16 py-5">
         {/* LOGO */}
         <Link href="/" className="group flex items-center gap-3">
-          <div className="relative w-11 h-11 rounded-full overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
+          <div className="relative w-10 h-10 sm:w-11 sm:h-11 overflow-hidden transition-all duration-300 group-hover:scale-105">
             <Image
               src="/img/logo.png"
               alt="Logo"
               fill
-              className="object-contain p-1 group-hover:scale-110 transition-transform duration-300"
+              className="object-contain"
               priority
             />
           </div>
-          <span className="text-xl font-bold bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500 bg-clip-text text-transparent">
+          <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500 bg-clip-text text-transparent">
             Portfolio
           </span>
         </Link>
 
         {/* DESKTOP NAV */}
         <div className="hidden md:flex items-center gap-10">
-          <ul className="flex items-center gap-10">
+          <ul className="flex items-center gap-6 sm:gap-10">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
@@ -76,7 +74,7 @@ const Navbar = () => {
           </ul>
 
           {/* SOCIAL ICONS */}
-          <div className="flex items-center gap-3 pl-6 border-l border-pink-200">
+          <div className="flex items-center gap-3 pl-4 sm:pl-6 border-l border-pink-200">
             {socialLinks.map((social) => {
               const Icon = social.icon;
               return (
@@ -85,13 +83,10 @@ const Navbar = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-gradient-to-br from-rose-50 to-purple-50
-                             flex items-center justify-center text-gray-600
-                             hover:text-white hover:from-rose-400 hover:to-purple-400
-                             transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                  className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center text-gray-600 hover:text-rose-500 hover:scale-110 transition-all duration-300"
                   aria-label={social.label}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-4 sm:w-5 h-4 sm:h-5" />
                 </a>
               );
             })}
@@ -101,7 +96,7 @@ const Navbar = () => {
         {/* MOBILE BUTTON */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden w-11 h-11 rounded-full bg-gradient-to-br from-rose-100 to-purple-100
+          className="md:hidden w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gradient-to-br from-rose-100 to-purple-100
                      flex items-center justify-center text-gray-700
                      hover:from-rose-200 hover:to-purple-200 transition-all duration-300"
           aria-label="Toggle menu"
@@ -117,7 +112,7 @@ const Navbar = () => {
                       isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                     }`}
       >
-        <div className="px-6 py-6 space-y-5">
+        <div className="px-4 sm:px-6 py-6 space-y-5">
           {navLinks.map((link, index) => (
             <Link
               key={link.href}
@@ -139,13 +134,10 @@ const Navbar = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-full bg-gradient-to-br from-rose-50 to-purple-50
-                             flex items-center justify-center text-gray-600
-                             hover:text-white hover:from-rose-400 hover:to-purple-400
-                             transition-all duration-300 hover:scale-110"
+                  className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center text-gray-600 hover:text-rose-500 hover:scale-110 transition-all duration-300"
                   aria-label={social.label}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-4 sm:w-5 h-4 sm:h-5" />
                 </a>
               );
             })}
