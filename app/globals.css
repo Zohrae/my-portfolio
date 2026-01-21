@@ -64,3 +64,23 @@ body {
   animation-delay: 1000ms;
 }
 
+
+
+@layer utilities {
+  @keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+
+  .animate-sparkle {
+    animation: sparkle 2s infinite;
+  }
+
+  .animate-sparkle-delay-500 {
+    animation-delay: 0.5s;
+  }
+
+  .animate-sparkle-delay-1000 {
+    animation-delay: 1s;
+  }
+}
