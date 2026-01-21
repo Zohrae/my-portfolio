@@ -1,40 +1,30 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import Navbar from "@/components/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["300","400","500","600","700","800"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Fatima LAMSSANE | Full Stack Developer",
-  description:
-    "Portfolio of Fatima LAMSSANE - Junior Full Stack Web Developer, showcasing projects, skills, and experiences.",
+  title: "Mon Portfolio",
+  description: "Portfolio simple et clair",
+  authors: [{ name: "Votre Nom" }],
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`
-          ${geistSans.variable} ${geistMono.variable} antialiased
-          bg-gradient-to-br from-[#F9DBBD] via-[#FFA5AB] to-[#DA627D]
-          text-[#0a0a0a] dark:bg-[#450920] dark:text-[#ffffff]
-          transition-colors duration-700
-          overflow-x-hidden
-        `}
-      >
-        {children}
+    <html lang="fr" className={inter.className}>
+      <body className="antialiased bg-white text-gray-900">
+        <Navbar />
+        <main className="pt-24">{children}</main>
       </body>
     </html>
   );
