@@ -1,9 +1,14 @@
+import Hero from "@/components/Hero";
+
 export default function Home() {
   return (
-    <section className="flex justify-center items-center min-h-screen">
-      <h1 className="text-5xl font-extrabold text-purple-700">
-        Hello World
-      </h1>
-    </section>
+    <>
+      <Hero />
+      
+      {/* Placeholder for next sections */}
+      <section id="about" className="min-h-screen flex items-center justify-center bg-white">
+        <h2 className="text-4xl font-bold text-gray-800">About Section Coming Soon...</h2>
+      </section>
+    </>
   );
 }
