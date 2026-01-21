@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["300","400","500","600","700","800"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="fr" className={inter.className}>
       <body className="antialiased bg-white text-gray-900">
         <Navbar />
-        <main className="pt-24">{children}</main>
+        <main className="pt-20">{children}</main>
       </body>
     </html>
   );
