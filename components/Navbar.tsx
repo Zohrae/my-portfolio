@@ -49,7 +49,11 @@ const Navbar = () => {
               priority
             />
           </div>
-          <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500 bg-clip-text text-transparent">
+          <span
+            className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500 bg-clip-text text-transparent"
+style={{ fontFamily: "Libre Baskerville, serif", letterSpacing: "0.06em" }}
+
+          >
             Portfolio
           </span>
         </Link>
@@ -61,14 +65,16 @@ const Navbar = () => {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="relative px-2 py-1 text-gray-700 font-medium transition-all duration-300
-                             hover:text-rose-500 hover:-translate-y-[2px]
-                             hover:drop-shadow-[0_6px_12px_rgba(244,114,182,0.35)]
-                             group"
+                  className="relative px-2 py-1 text-black-1800 text-xl transition-all duration-300
+                            hover:text-rose-500 hover:-translate-y-[2px]
+                            hover:drop-shadow-[0_6px_12px_rgba(244,114,182,0.35)]
+                            group"
+                  style={{ fontFamily: "Freestyle Script, cursive", letterSpacing: "0.1em" }}
                 >
                   {link.label}
                   <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-rose-400 to-purple-400 group-hover:w-full transition-all duration-300 rounded-full"></span>
                 </Link>
+
               </li>
             ))}
           </ul>
@@ -119,7 +125,7 @@ const Navbar = () => {
               href={link.href}
               onClick={() => setIsOpen(false)}
               className="block text-gray-700 font-medium hover:text-rose-500 transition-all duration-300 animate-fade-in-down"
-              style={{ animationDelay: `${index * 60}ms` }}
+              style={{ animationDelay: `${index * 60}ms`, fontFamily: "Freestyle Script, cursive", letterSpacing: "0.1em" }}
             >
               {link.label}
             </Link>
