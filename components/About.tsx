@@ -51,16 +51,16 @@ const About = () => {
       <div className="relative z-10 px-6 sm:px-10 w-full flex flex-col items-center justify-center">
         {/* Title */}
         <h2
-            className="text-center text-4xl sm:text-5xl md:text-6xl font-bold mb-12"
-            style={{
-                fontFamily: "Freestyle Script, cursive",
-                letterSpacing: "0.1em",
-                textShadow: "0 4px 12px rgba(59,29,42,0.55)",
-                color: "#3b1d2a"
-            }}
-            >
-            What about Me ?
-            </h2>
+        className="text-center text-4xl sm:text-5xl md:text-6xl font-bold mb-12"
+        style={{
+            fontFamily: "Freestyle Script, cursive",
+            letterSpacing: "0.1em",
+            textShadow: "0 4px 12px rgba(59,29,42,0.55)",
+            color: "#3b1d2a"
+        }}
+        >
+        What about Me ?
+        </h2>
 
         <div className="h-5"></div>
 
@@ -143,71 +143,65 @@ const About = () => {
           </div>
 
           {/* RIGHT – TIMELINE */}
-          <div
-            className="relative w-full flex justify-center"
-            style={{ marginTop: "1.2rem" }}
-          >
-            <div className="absolute top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-700/40 to-transparent"></div>
+          {/* RIGHT – TIMELINE */}
+<div
+  className="relative w-full flex justify-center"
+  style={{ marginTop: "1.2rem" }}
+>
+  {/* Vertical line */}
+  <div className="absolute top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-700/40 to-transparent left-1/2 transform -translate-x-1/2"></div>
 
-            <div className="flex flex-col relative z-10 w-full max-w-xl gap-12">
-              {education.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="relative flex items-start md:items-center"
-                >
-                  <div className="hidden md:flex w-1/2 pr-4 justify-end">
-                    {idx % 2 === 0 && (
-                      <div className="text-right space-y-0.5">
-                        <div className="text-xs text-gray-700 font-semibold">
-                          {item.year}
-                        </div>
-                        <div className="text-sm md:text-base font-semibold text-gray-900">
-                          {item.title}
-                        </div>
-                        <div className="text-xs text-gray-600">
-                          {item.place}
-                        </div>
-                      </div>
-                    )}
-                  </div>
+  <div className="flex flex-col relative z-10 w-full max-w-xl gap-12">
+    {education.map((item, idx) => (
+      <div key={idx} className="relative flex items-start md:items-center">
 
-                  <div className="flex flex-col items-center relative z-10 w-8 mx-4">
-                    <div className="w-8 h-8 rounded-full bg-[#3b1d2a] shadow-md flex items-center justify-center">
-                      <GraduationCap className="w-4 h-4 text-white" />
-                    </div>
-                  </div>
-
-                  <div className="hidden md:flex w-1/2 pl-4 justify-start">
-                    {idx % 2 === 1 && (
-                      <div className="text-left space-y-0.5">
-                        <div className="text-xs text-gray-700 font-semibold">
-                          {item.year}
-                        </div>
-                        <div className="text-sm md:text-base font-semibold text-gray-900">
-                          {item.title}
-                        </div>
-                        <div className="text-xs text-gray-600">
-                          {item.place}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="md:hidden mt-4 w-full text-center space-y-0.5">
-                    <div className="text-xs text-gray-700 font-semibold">
-                      {item.year}
-                    </div>
-                    <div className="text-sm font-semibold text-gray-900">
-                      {item.title}
-                    </div>
-                    <div className="text-xs text-gray-600">
-                      {item.place}
-                    </div>
-                  </div>
-                </div>
-              ))}
+        {/* LEFT TITLES */}
+        <div
+          className="hidden md:flex w-1/2 justify-end"
+          style={{ marginRight: "1.5rem" }} // espace subtil pour tous les titres à gauche
+        >
+          {idx % 2 === 0 && (
+            <div className="text-right space-y-0.5">
+              <div className="text-xs text-gray-700 font-semibold">{item.year}</div>
+              <div className="text-sm md:text-base font-semibold text-gray-900">{item.title}</div>
+              <div className="text-xs text-gray-600">{item.place}</div>
             </div>
+          )}
+        </div>
+
+        {/* CENTER DOT */}
+        <div className="flex flex-col items-center relative z-10 w-8">
+          <div className="w-8 h-8 rounded-full bg-[#3b1d2a] shadow-md flex items-center justify-center">
+            <GraduationCap className="w-4 h-4 text-white" />
           </div>
+        </div>
+
+        {/* RIGHT TITLES */}
+        <div
+          className="hidden md:flex w-1/2 justify-start"
+          style={{ marginLeft: "0.3rem" }} // espace subtil pour tous les titres à droite
+        >
+          {idx % 2 === 1 && (
+            <div className="text-left space-y-0.5">
+              <div className="text-xs text-gray-700 font-semibold">{item.year}</div>
+              <div className="text-sm md:text-base font-semibold text-gray-900">{item.title}</div>
+              <div className="text-xs text-gray-600">{item.place}</div>
+            </div>
+          )}
+        </div>
+
+        {/* MOBILE */}
+        <div className="md:hidden mt-4 w-full text-center space-y-0.5">
+          <div className="text-xs text-gray-700 font-semibold">{item.year}</div>
+          <div className="text-sm font-semibold text-gray-900">{item.title}</div>
+          <div className="text-xs text-gray-600">{item.place}</div>
+        </div>
+
+      </div>
+    ))}
+  </div>
+</div>
+
         </div>
       </div>
     </section>
