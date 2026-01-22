@@ -65,33 +65,38 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-rose-100 via-pink-50 to-purple-100 px-4 sm:px-6 lg:px-16">
-      {/* Background blobs */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-rose-100 via-pink-50 to-purple-100">
+      {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-5 sm:left-10 w-60 sm:w-72 h-60 sm:h-72 bg-rose-300/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-5 sm:right-10 w-80 sm:w-96 h-80 sm:h-96 bg-purple-300/30 rounded-full blur-3xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/2 w-60 sm:w-80 h-60 sm:h-80 bg-pink-300/20 rounded-full blur-3xl animate-pulse delay-500 -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-rose-300/30 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-300/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-300/20 rounded-full blur-3xl animate-pulse delay-500"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-36 items-center">
-        {/* LEFT */}
-        <div className="space-y-6 sm:space-y-8">
-          <div className="space-y-4">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Hi, I'm{" "}
-              <span className="bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500 bg-clip-text text-transparent">
-                Fatima
-              </span>
-            </h1>
+      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-32 sm:gap-x-40 items-center">
+        
+        {/* Left side - Text content */}
+          <div className="space-y-6 sm:space-y-8 pl-4 sm:pl-8">
+                    <div className="space-y-4">
+                      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                        Hi, I'm{" "}
+                          <span className="text-[#3b1d2a] drop-shadow-[0_4px_12px_rgba(59,29,42,0.55)]">
+                            Fatima
+                          </span>
+                      </h1>
+                      
+                      {/* Typing titles */}
+                      <div className="h-12 sm:h-16 relative">
+            <h2
+              style={{ fontFamily: "Freestyle Script, cursive", letterSpacing: "0.15em" }}
+              className="text-lg sm:text-xl md:text-3xl font-semibold text-gray-700 flex items-start pl-1"
+            >
+              {displayedText}
+              <span className="animate-pulse ml-1">|</span>
+            </h2>
+          </div>
 
-            {/* Typing titles */}
-            <div className="h-12 sm:h-16 relative overflow-hidden">
-              <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-700 flex items-start">
-                {displayedText}
-                <span className="animate-pulse ml-1">|</span>
-              </h2>
-            </div>
           </div>
 
           <p className="relative text-gray-900 text-base sm:text-lg md:text-lg leading-relaxed max-w-xl">
@@ -105,12 +110,13 @@ const Hero = () => {
             <span className="absolute top-1/3 left-3/4 w-2 h-2 bg-pink-200 rounded-full animate-sparkle animate-sparkle-delay-500" />
             <span className="absolute top-2/3 left-1/2 w-2 h-2 bg-pink-200 rounded-full animate-sparkle animate-sparkle-delay-1000" />
           </p>
-<div className="h-3"></div>
+
+          <div className="h-3"></div>
           <div className="flex items-center gap-3 text-base text-gray-600">
             <MapPin className="w-5 h-5 text-rose-500" />
             <span>Marrakech, Morocco</span>
           </div>
-<div className="h-5"></div>
+          <div className="h-5"></div>
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-4 sm:pt-6">
             <a
@@ -135,7 +141,7 @@ const Hero = () => {
               <Download className="w-5 h-5" />
             </a>
           </div>
-<div className="h-2"></div>
+          <div className="h-2"></div>
           {/* Social links - NO BACKGROUND */}
           <div className="flex items-center gap-4 sm:gap-6 pt-6 sm:pt-10">
             {[Github, Linkedin, Mail].map((Icon, i) => (
@@ -158,13 +164,16 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* RIGHT */}
+
+        {/* Right side - Image */}
         <div className="relative flex justify-center mt-8 md:mt-0">
           <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-[420px] md:h-[420px]">
-            <div className="absolute inset-0 bg-gradient-to-br from-rose-400 to-purple-400 rounded-full blur-3xl opacity-20 animate-pulse" />
-            <div className="absolute inset-6 bg-gradient-to-br from-rose-300 to-purple-300 rounded-full opacity-25 animate-pulse delay-300" />
-
-            <div className="relative w-full h-full rounded-full overflow-hidden border-6 sm:border-8 border-white shadow-2xl ring-4 ring-rose-100/50">
+            {/* Decorative circles - more subtle */}
+            <div className="absolute inset-0 bg-gradient-to-br from-rose-400 via-pink-400 to-purple-400 rounded-full opacity-20 blur-3xl animate-pulse"></div>
+            <div className="absolute inset-6 bg-gradient-to-br from-rose-300 to-purple-300 rounded-full opacity-25 animate-pulse delay-300"></div>
+            
+            {/* Profile image with better border */}
+            <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-white shadow-2xl ring-4 ring-rose-100/50">
               <Image
                 src="/img/me.jpg"
                 alt="Fatima LAMSSANE"
@@ -173,6 +182,10 @@ const Hero = () => {
                 priority
               />
             </div>
+
+            {/* Floating decorative elements */}
+            <div className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-br from-rose-400 to-pink-400 rounded-full blur-xl opacity-60 animate-pulse"></div>
+            <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full blur-xl opacity-60 animate-pulse delay-500"></div>
           </div>
         </div>
       </div>
@@ -180,10 +193,11 @@ const Hero = () => {
       {/* Scroll indicator */}
       <button
         onClick={scrollToNext}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600 hover:text-rose-500 transition-colors group"
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600 hover:text-rose-500 transition-colors duration-300 cursor-pointer group"
+        aria-label="Scroll down"
       >
-        <span className="text-sm font-medium">Scroll Down</span>
-        <ArrowDown className="w-6 h-6 animate-bounce" />
+        <span className="text-sm font-medium tracking-wide">Scroll Down</span>
+        <ArrowDown className="w-6 h-6 animate-bounce group-hover:text-rose-500" />
       </button>
     </section>
   );

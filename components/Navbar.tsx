@@ -50,12 +50,15 @@ const Navbar = () => {
             />
           </div>
           <span
-            className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500 bg-clip-text text-transparent"
-style={{ fontFamily: "Libre Baskerville, serif", letterSpacing: "0.06em" }}
-
-          >
-            Portfolio
-          </span>
+          className="text-xl sm:text-2xl font-bold text-[var(--color-rose)]"
+          style={{
+            fontFamily: "Libre Baskerville, serif",
+            letterSpacing: "0.06em",
+            textShadow: "3px 3px 8px rgba(219, 39, 119, 0.6)" // darker pink shadow
+          }}
+        >
+          Portfolio
+        </span>
         </Link>
 
         {/* DESKTOP NAV */}
@@ -89,14 +92,23 @@ style={{ fontFamily: "Libre Baskerville, serif", letterSpacing: "0.06em" }}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center text-gray-600 hover:text-rose-500 hover:scale-110 transition-all duration-300"
+                  className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center text-gray-600 
+                            hover:text-[var(--color-rose)] hover:scale-110 transition-all duration-300"
+                  style={{ transition: "all 0.3s ease" }}
                   aria-label={social.label}
                 >
-                  <Icon className="w-4 sm:w-5 h-4 sm:h-5" />
+                  <Icon
+                    className="w-4 sm:w-5 h-4 sm:h-5"
+                    style={{
+                      filter: "drop-shadow(0.2px 0.5px 0.7px currentColor)", // light shadow using icon color
+                      transition: "all 0.3s ease",
+                    }}
+                  />
                 </a>
               );
             })}
           </div>
+
         </div>
 
         {/* MOBILE BUTTON */}
