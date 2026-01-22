@@ -79,7 +79,14 @@ const Hero = () => {
         {/* Left side - Text content */}
           <div className="space-y-6 sm:space-y-8 pl-4 sm:pl-8">
                     <div className="space-y-4">
-                      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                      <h1
+                      style={{
+                fontFamily: "Freestyle Script, cursive",
+                letterSpacing: "0.1em",
+                textShadow: "0 4px 12px rgba(59,29,42,0.55)",
+                color: "#3b1d2a"
+            }}
+                       className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                         Hi, I'm{" "}
                           <span className="text-[#3b1d2a] drop-shadow-[0_4px_12px_rgba(59,29,42,0.55)]">
                             Fatima
@@ -89,8 +96,8 @@ const Hero = () => {
                       {/* Typing titles */}
                       <div className="h-12 sm:h-16 relative">
             <h2
-              style={{ fontFamily: "Freestyle Script, cursive", letterSpacing: "0.15em" }}
-              className="text-lg sm:text-xl md:text-3xl font-semibold text-gray-700 flex items-start pl-1"
+              style={{ fontFamily: "Libre Baskerville, serif", letterSpacing: "0.05em" }}
+              className="text-lg sm:text-xl md:text-1xl font-semibold text-gray-700 flex items-start pl-1"
             >
               {displayedText}
               <span className="animate-pulse ml-1">|</span>
@@ -191,14 +198,21 @@ const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <button
-        onClick={scrollToNext}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600 hover:text-rose-500 transition-colors duration-300 cursor-pointer group"
-        aria-label="Scroll down"
-      >
-        <span className="text-sm font-medium tracking-wide">Scroll Down</span>
-        <ArrowDown className="w-6 h-6 animate-bounce group-hover:text-rose-500" />
-      </button>
+      {/* Scroll indicator - icon only, cute */}
+<button
+  onClick={scrollToNext}
+  className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-1 cursor-pointer"
+  aria-label="Scroll down"
+>
+  {/* Cute animated circles around arrow */}
+  <div className="relative w-6 h-6 flex items-center justify-center">
+    <span className="absolute w-2 h-2 bg-purple-200 rounded-full animate-bounce-slow opacity-80"></span>
+    <span className="absolute w-2 h-2 bg-pink-200 rounded-full animate-bounce-slow delay-150 opacity-80"></span>
+    <span className="absolute w-2 h-2 bg-blue-200 rounded-full animate-bounce-slow delay-300 opacity-80"></span>
+    <ArrowDown className="w-6 h-6 text-gray-500 animate-bounce" />
+  </div>
+</button>
+
     </section>
   );
 };
