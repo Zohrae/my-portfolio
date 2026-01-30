@@ -179,7 +179,7 @@ const About = () => {
         {/* RIGHT TITLES */}
         <div
           className="hidden md:flex w-1/2 justify-start"
-          style={{ marginLeft: "0.3rem" }} // espace subtil pour tous les titres à droite
+          style={{ marginLeft: "0.2rem" }} // espace subtil pour tous les titres à droite
         >
           {idx % 2 === 1 && (
             <div className="text-left space-y-0.5">
