@@ -143,64 +143,63 @@ const About = () => {
           </div>
 
           {/* RIGHT – TIMELINE */}
-          {/* RIGHT – TIMELINE */}
-<div
-  className="relative w-full flex justify-center"
-  style={{ marginTop: "1.2rem" }}
->
-  {/* Vertical line */}
-  <div className="absolute top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-700/40 to-transparent left-1/2 transform -translate-x-1/2"></div>
+            <div
+              className="relative w-full flex justify-center"
+              style={{ marginTop: "1.2rem" }}
+            >
+              {/* Vertical line */}
+              <div className="absolute top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-700/40 to-transparent left-1/2 transform -translate-x-1/2"></div>
 
-  <div className="flex flex-col relative z-10 w-full max-w-xl gap-12">
-    {education.map((item, idx) => (
-      <div key={idx} className="relative flex items-start md:items-center">
+              <div className="flex flex-col relative z-10 w-full max-w-xl gap-12">
+                {education.map((item, idx) => (
+                  <div key={idx} className="relative flex items-start md:items-center">
 
-        {/* LEFT TITLES */}
-        <div
-          className="hidden md:flex w-1/2 justify-end"
-          style={{ marginRight: "1.5rem" }} // espace subtil pour tous les titres à gauche
-        >
-          {idx % 2 === 0 && (
-            <div className="text-right space-y-0.5">
-              <div className="text-xs text-gray-700 font-semibold">{item.year}</div>
-              <div className="text-sm md:text-base font-semibold text-gray-900">{item.title}</div>
-              <div className="text-xs text-gray-600">{item.place}</div>
+                    {/* LEFT TITLES */}
+                    <div
+                      className="hidden md:flex w-1/2 justify-end"
+                      style={{ marginRight: "1.5rem" }} // espace subtil pour tous les titres à gauche
+                    >
+                      {idx % 2 === 0 && (
+                        <div className="text-right space-y-0.5">
+                          <div className="text-xs text-gray-700 font-semibold">{item.year}</div>
+                          <div className="text-sm md:text-base font-semibold text-gray-900">{item.title}</div>
+                          <div className="text-xs text-gray-600">{item.place}</div>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* CENTER DOT */}
+                    <div className="flex flex-col items-center relative z-10 w-8">
+                      <div className="w-8 h-8 rounded-full bg-[#3b1d2a] shadow-md flex items-center justify-center">
+                        <GraduationCap className="w-4 h-4 text-white" />
+                      </div>
+                    </div>
+
+                    {/* RIGHT TITLES */}
+                    <div
+                      className="hidden md:flex w-1/2 justify-start"
+                      style={{ marginLeft: "0.2rem" }} // espace subtil pour tous les titres à droite
+                    >
+                      {idx % 2 === 1 && (
+                        <div className="text-left space-y-0.5">
+                          <div className="text-xs text-gray-700 font-semibold">{item.year}</div>
+                          <div className="text-sm md:text-base font-semibold text-gray-900">{item.title}</div>
+                          <div className="text-xs text-gray-600">{item.place}</div>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* MOBILE */}
+                    <div className="md:hidden mt-4 w-full text-center space-y-0.5">
+                      <div className="text-xs text-gray-700 font-semibold">{item.year}</div>
+                      <div className="text-sm font-semibold text-gray-900">{item.title}</div>
+                      <div className="text-xs text-gray-600">{item.place}</div>
+                    </div>
+
+                  </div>
+                ))}
+              </div>
             </div>
-          )}
-        </div>
-
-        {/* CENTER DOT */}
-        <div className="flex flex-col items-center relative z-10 w-8">
-          <div className="w-8 h-8 rounded-full bg-[#3b1d2a] shadow-md flex items-center justify-center">
-            <GraduationCap className="w-4 h-4 text-white" />
-          </div>
-        </div>
-
-        {/* RIGHT TITLES */}
-        <div
-          className="hidden md:flex w-1/2 justify-start"
-          style={{ marginLeft: "0.2rem" }} // espace subtil pour tous les titres à droite
-        >
-          {idx % 2 === 1 && (
-            <div className="text-left space-y-0.5">
-              <div className="text-xs text-gray-700 font-semibold">{item.year}</div>
-              <div className="text-sm md:text-base font-semibold text-gray-900">{item.title}</div>
-              <div className="text-xs text-gray-600">{item.place}</div>
-            </div>
-          )}
-        </div>
-
-        {/* MOBILE */}
-        <div className="md:hidden mt-4 w-full text-center space-y-0.5">
-          <div className="text-xs text-gray-700 font-semibold">{item.year}</div>
-          <div className="text-sm font-semibold text-gray-900">{item.title}</div>
-          <div className="text-xs text-gray-600">{item.place}</div>
-        </div>
-
-      </div>
-    ))}
-  </div>
-</div>
 
         </div>
       </div>
