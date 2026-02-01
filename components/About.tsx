@@ -163,7 +163,7 @@ const About = () => {
                     {/* LEFT TITLES */}
                     <div
                       className="hidden md:flex w-1/2 justify-end"
-                      style={{ marginRight: "1.5rem" }} // espace subtil pour tous les titres à gauche
+                      style={{ marginRight: "2.5rem" }} // espace subtil pour tous les titres à gauche
                     >
                       {idx % 2 === 0 && (
                         <div className="text-right space-y-0.5">
@@ -175,11 +175,12 @@ const About = () => {
                     </div>
 
                     {/* CENTER DOT */}
-                    <div className="flex flex-col items-center relative z-10 w-8">
-                      <div className="w-8 h-8 rounded-full bg-[#3b1d2a] shadow-md flex items-center justify-center">
-                        <GraduationCap className="w-4 h-4 text-white" />
+                      <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
+                        <div className="w-8 h-8 rounded-full bg-[#3b1d2a] shadow-md flex items-center justify-center">
+                          <GraduationCap className="w-4 h-4 text-white" />
+                        </div>
                       </div>
-                    </div>
+
 
                     {/* RIGHT TITLES */}
                     <div
