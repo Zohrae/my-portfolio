@@ -121,7 +121,7 @@ export default function SkillsSection() {
             <div
               key={idx}
               className="w-full"
-              style={{ paddingBottom: '6rem' }}
+              style={{ paddingBottom: '4rem' }}
             >
               {/* Category Title LEFT */}
               <h3
@@ -129,7 +129,7 @@ export default function SkillsSection() {
                             fontFamily: "Libre Baskerville, serif",
                             letterSpacing: "0.06em",
                             textShadow: "3px 3px 8px rgba(219, 39, 119, 0.6)",
-                            marginBottom: "3rem"
+                            marginBottom: "2rem"
                         }}                
                 className="text-left text-xl md:text-2xl text-[#3b1d2a]"
               >
