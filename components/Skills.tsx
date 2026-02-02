@@ -71,13 +71,29 @@ const skillsData = [
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="w-full py-24 bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 relative overflow-hidden">
-      {/* Blurry Pink Background - Right Side Only */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 right-10 w-[450px] h-[450px] bg-rose-300/40 rounded-full blur-[150px]"></div>
-        <div className="absolute top-1/3 right-24 w-96 h-96 bg-pink-400/35 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-32 right-16 w-[500px] h-[500px] bg-purple-300/30 rounded-full blur-[140px]"></div>
-        <div className="absolute top-1/2 right-40 w-80 h-80 bg-rose-400/25 rounded-full blur-[100px]"></div>
+    <section id="skills" className="w-full py-24 bg-gradient-to-br from-rose-100 via-pink-50 to-purple-100 relative overflow-hidden">
+      {/* Rain on glass effect - RIGHT SIDE ONLY */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Large background blurs */}
+        <div className="absolute top-10 right-5 w-96 h-96 bg-rose-200/20 rounded-full blur-[100px]"></div>
+        <div className="absolute top-40 right-20 w-80 h-80 bg-pink-300/25 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-32 right-10 w-[500px] h-[500px] bg-purple-200/20 rounded-full blur-[140px]"></div>
+        
+        {/* Rain droplets - varying sizes */}
+        <div className="absolute top-20 right-32 w-16 h-16 bg-rose-400/40 rounded-full blur-2xl"></div>
+        <div className="absolute top-32 right-16 w-12 h-12 bg-pink-300/50 rounded-full blur-xl"></div>
+        <div className="absolute top-48 right-40 w-20 h-20 bg-rose-300/35 rounded-full blur-2xl"></div>
+        <div className="absolute top-64 right-24 w-10 h-10 bg-pink-400/45 rounded-full blur-lg"></div>
+        
+        <div className="absolute top-80 right-36 w-14 h-14 bg-purple-300/40 rounded-full blur-xl"></div>
+        <div className="absolute top-96 right-20 w-18 h-18 bg-rose-300/50 rounded-full blur-2xl"></div>
+        <div className="absolute top-[28rem] right-28 w-12 h-12 bg-pink-300/35 rounded-full blur-xl"></div>
+        
+        <div className="absolute bottom-64 right-32 w-16 h-16 bg-purple-400/40 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-48 right-20 w-14 h-14 bg-rose-300/45 rounded-full blur-xl"></div>
+        <div className="absolute bottom-32 right-36 w-20 h-20 bg-pink-400/35 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-20 right-24 w-10 h-10 bg-purple-300/50 rounded-full blur-lg"></div>
+        <div className="absolute bottom-12 right-16 w-12 h-12 bg-rose-400/40 rounded-full blur-xl"></div>
       </div>
 
       {/* Content */}
@@ -105,7 +121,7 @@ export default function SkillsSection() {
             <div
               key={idx}
               className="w-full"
-              style={{ paddingBottom: '3rem' }}
+              style={{ paddingBottom: '6rem' }}
             >
               {/* Category Title LEFT */}
               <h3
@@ -113,7 +129,7 @@ export default function SkillsSection() {
                             fontFamily: "Libre Baskerville, serif",
                             letterSpacing: "0.06em",
                             textShadow: "3px 3px 8px rgba(219, 39, 119, 0.6)",
-                            marginBottom: "1.5rem"
+                            marginBottom: "3rem"
                         }}                
                 className="text-left text-xl md:text-2xl text-[#3b1d2a]"
               >
