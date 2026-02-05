@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const skillsData = [
   {
@@ -70,35 +70,40 @@ const skillsData = [
 ];
 
 export default function SkillsSection() {
+  const refs = useRef<(HTMLDivElement | null)[]>([]);
+  const [visible, setVisible] = useState<boolean[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = Number(entry.target.getAttribute("data-index"));
+          if (entry.isIntersecting) {
+            setVisible((prev) => {
+              const updated = [...prev];
+              updated[index] = true;
+              return updated;
+            });
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    refs.current.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="skills" className="w-full py-24 bg-gradient-to-br from-rose-100 via-pink-50 to-purple-100 relative overflow-hidden">
       {/* Rain on glass effect - RIGHT SIDE ONLY */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Large background blurs */}
         <div className="absolute top-10 right-5 w-96 h-96 bg-rose-200/20 rounded-full blur-[100px]"></div>
         <div className="absolute top-40 right-20 w-80 h-80 bg-pink-300/25 rounded-full blur-[120px]"></div>
         <div className="absolute bottom-32 right-10 w-[500px] h-[500px] bg-purple-200/20 rounded-full blur-[140px]"></div>
-        
-        {/* Rain droplets - varying sizes */}
-        <div className="absolute top-20 right-32 w-16 h-16 bg-rose-400/40 rounded-full blur-2xl"></div>
-        <div className="absolute top-32 right-16 w-12 h-12 bg-pink-300/50 rounded-full blur-xl"></div>
-        <div className="absolute top-48 right-40 w-20 h-20 bg-rose-300/35 rounded-full blur-2xl"></div>
-        <div className="absolute top-64 right-24 w-10 h-10 bg-pink-400/45 rounded-full blur-lg"></div>
-        
-        <div className="absolute top-80 right-36 w-14 h-14 bg-purple-300/40 rounded-full blur-xl"></div>
-        <div className="absolute top-96 right-20 w-18 h-18 bg-rose-300/50 rounded-full blur-2xl"></div>
-        <div className="absolute top-[28rem] right-28 w-12 h-12 bg-pink-300/35 rounded-full blur-xl"></div>
-        
-        <div className="absolute bottom-64 right-32 w-16 h-16 bg-purple-400/40 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-48 right-20 w-14 h-14 bg-rose-300/45 rounded-full blur-xl"></div>
-        <div className="absolute bottom-32 right-36 w-20 h-20 bg-pink-400/35 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-20 right-24 w-10 h-10 bg-purple-300/50 rounded-full blur-lg"></div>
-        <div className="absolute bottom-12 right-16 w-12 h-12 bg-rose-400/40 rounded-full blur-xl"></div>
       </div>
 
-      {/* Content */}
       <div className="relative z-10">
-        {/* MAIN TITLE (centered at top) */}
         <div className="h-5"></div>
 
         <div className="flex flex-col items-center justify-center text-center mb-16 px-6">
@@ -108,35 +113,36 @@ export default function SkillsSection() {
               letterSpacing: "0.1em",
               textShadow: "0 4px 12px rgba(59,29,42,0.55)",
               color: "#3b1d2a"
-            }}          
+            }}
             className="text-center text-4xl sm:text-5xl md:text-6xl font-bold mb-12"
           >
             My Skills
           </h2>
         </div>
 
-        {/* SKILL GROUPS */}
         <div className="px-8" style={{ paddingLeft: '4rem' }}>
           {skillsData.map((group, idx) => (
             <div
               key={idx}
-              className="w-full"
+              ref={(el) => (refs.current[idx] = el)}
+              data-index={idx}
+              className={`w-full transition-all duration-1000 ease-out transform ${
+                visible[idx] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              }`}
               style={{ paddingBottom: '4rem' }}
             >
-              {/* Category Title LEFT */}
               <h3
                 style={{
-                            fontFamily: "Libre Baskerville, serif",
-                            letterSpacing: "0.06em",
-                            textShadow: "3px 3px 8px rgba(219, 39, 119, 0.6)",
-                            marginBottom: "2rem"
-                        }}                
+                  fontFamily: "Libre Baskerville, serif",
+                  letterSpacing: "0.06em",
+                  textShadow: "3px 3px 8px rgba(219, 39, 119, 0.6)",
+                  marginBottom: "2rem"
+                }}
                 className="text-left text-xl md:text-2xl text-[#3b1d2a]"
               >
                 {group.title}
               </h3>
 
-              {/* Icons ROW (static) */}
               <div className="flex flex-wrap gap-8">
                 {group.items.map((item, i) => (
                   <div key={i} className="flex flex-col items-center justify-center space-y-2 w-24">
@@ -146,7 +152,6 @@ export default function SkillsSection() {
                 ))}
               </div>
 
-              {/* Divider - only if not last item */}
               {idx < skillsData.length - 1 && (
                 <div className="mt-16 w-full h-px bg-gradient-to-r from-transparent via-rose-300/50 to-transparent"></div>
               )}
