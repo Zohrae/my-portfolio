@@ -180,7 +180,7 @@ const Hero = () => {
             <div className="absolute inset-6 bg-gradient-to-br from-rose-300 to-purple-300 rounded-full opacity-25 animate-pulse delay-300"></div>
             
             {/* Profile image with better border */}
-            <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-white shadow-2xl ring-4 ring-rose-100/50">
+            <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-white shadow-2xl ring-4 ring-rose-100/50 animate-vertical-float">
               <Image
                 src="/img/me.jpg"
                 alt="Fatima LAMSSANE"
@@ -213,6 +213,19 @@ const Hero = () => {
   </div>
 </button>
 
+      {/* Subtle vertical float keyframes for the profile image ONLY */}
+      <style jsx>{`
+        @keyframes verticalFloat {
+          0% { transform: translateY(0); }
+          50% { transform: translateY(-6px); } /* only a few pixels */
+          100% { transform: translateY(0); }
+        }
+
+        .animate-vertical-float {
+          animation: verticalFloat 4s ease-in-out infinite;
+          will-change: transform;
+        }
+      `}</style>
     </section>
   );
 };

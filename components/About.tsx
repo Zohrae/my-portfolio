@@ -80,43 +80,43 @@ const About = () => {
             }}
         >
             <svg viewBox="0 0 420 820" width="100%" height="100%">
-  <defs>
-    <linearGradient id="slantedWaveGrad" gradientUnits="userSpaceOnUse" x1="420" y1="0" x2="0" y2="820">
-      <stop offset="0%" stopColor="rgba(255,255,255,1)" stopOpacity="0.08" />
-      <stop offset="10%" stopColor="rgba(244,114,182,1)" stopOpacity="0.35" />
-      <stop offset="35%" stopColor="rgba(244,114,182,1)" stopOpacity="0.65" />
-      <stop offset="60%" stopColor="rgba(255,255,255,1)" stopOpacity="0.35" />
-      <stop offset="85%" stopColor="rgba(255,255,255,1)" stopOpacity="0.18" />
-      <stop offset="100%" stopColor="rgba(255,255,255,1)" stopOpacity="0.08" />
-    </linearGradient>
+            <defs>
+              <linearGradient id="slantedWaveGrad" gradientUnits="userSpaceOnUse" x1="420" y1="0" x2="0" y2="820">
+                <stop offset="0%" stopColor="rgba(255,255,255,1)" stopOpacity="0.08" />
+                <stop offset="10%" stopColor="rgba(244,114,182,1)" stopOpacity="0.35" />
+                <stop offset="35%" stopColor="rgba(244,114,182,1)" stopOpacity="0.65" />
+                <stop offset="60%" stopColor="rgba(255,255,255,1)" stopOpacity="0.35" />
+                <stop offset="85%" stopColor="rgba(255,255,255,1)" stopOpacity="0.18" />
+                <stop offset="100%" stopColor="rgba(255,255,255,1)" stopOpacity="0.08" />
+              </linearGradient>
 
-    <filter id="softBlur" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="8" />
-    </filter>
-  </defs>
+              <filter id="softBlur" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="8" />
+              </filter>
+            </defs>
 
-  <path
-    d={`
-      M 300 10
-      C 360 160, 140 260, 220 390
-      C 300 520, 160 620, 120 660
-      L 80 660
-    `}
-    fill="none"
-    stroke="url(#slantedWaveGrad)"
-    strokeWidth="16"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    filter="url(#softBlur)"
-  >
-    <animate
-      attributeName="opacity"
-      values="0.3;0.7;0.3"
-      dur="5s"
-      repeatCount="indefinite"
-    />
-  </path>
-</svg>
+            <path
+              d={`
+                M 300 10
+                C 360 160, 140 260, 220 390
+                C 300 520, 160 620, 120 660
+                L 80 660
+              `}
+              fill="none"
+              stroke="url(#slantedWaveGrad)"
+              strokeWidth="16"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              filter="url(#softBlur)"
+            >
+              <animate
+                attributeName="opacity"
+                values="0.3;0.7;0.3"
+                dur="5s"
+                repeatCount="indefinite"
+              />
+            </path>
+          </svg>
 
         </div>
         </div>
