@@ -7,25 +7,25 @@ const education = [
     year: "Ongoing",
     title: "Master's Degree in Software Systems Engineering",
     short: "MSc Software Systems Eng.",
-    place: "Faculty of Sciences Semlalia — Marrakech",
+    place: "FS — Marrakech",
   },
   {
     year: "Jun 2024",
     title: "Professional Bachelor's Degree in Information Systems & Networks",
     short: "Prof. Bachelor's — IS & Networks",
-    place: "Higher School of Technology — Safi",
+    place: "EST — Safi",
   },
   {
     year: "Jun 2023",
     title: "University Diploma of Technology",
     short: "University Diploma (Tech)",
-    place: "Higher School of Technology — Safi",
+    place: "EST — Safi",
   },
   {
     year: "Jul 2021",
     title: "Baccalaureate in Science",
     short: "Baccalaureate (Science)",
-    place: "Najib Talib High School",
+    place: "Najib Mahfoud — Safi",
   },
 ];
 
