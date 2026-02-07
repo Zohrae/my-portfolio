@@ -122,39 +122,35 @@ const About = () => {
         </div>
 
           {/* LEFT */}
-<div className="flex items-start w-full">
-  <div className="relative w-full">
-    <Quote className="w-12 h-12 text-[#3b1d2a]/20 mb-6" />
+          <div className="flex items-start w-full">
+            <div className="relative w-full">
+              <Quote className="w-12 h-12 text-[#3b1d2a]/20 mb-6" />
 
-    {/* TEXT BLOCK shifted using transform */}
-    <div className="relative translate-x-[100px]">
-      <p className="text-gray-900 leading-relaxed text-base sm:text-lg md:text-lg italic">
-        I believe that we always can excel even if we don't choose what
-        to excel in, but as long as we choose to make it better — even
-        if we are not in our chosen path — we can still do great!
-        <br />
-        <br />
-        I always prefer to keep it{" "}
-        <span className="font-bold text-[#3b1d2a] not-italic">
-          creative, unexpected & unique
-        </span>
-        . I don't like it easy, I don't like it casual! Bright &
-        innovative is my thing — and I know I slay at that so good!
-      </p>
+              <div className="relative">
+              <p className="text-gray-900 leading-relaxed text-base sm:text-lg md:text-lg italic">
+                  I believe that we always can excel even if we don't choose what
+                  to excel in, but as long as we choose to make it better — even
+                  if we are not in our chosen path — we can still do great!
+                  <br />
+                  <br />
+                  I always prefer to keep it{" "}
+                  <span className="font-bold text-[#3b1d2a] not-italic">
+                    creative, unexpected & unique
+                  </span>
+                  . I don't like it easy, I don't like it casual! Bright &
+                  innovative is my thing — and I know I slay at that so good!
+                </p>
+                    <br />
+                <p className="mt-6 text-gray-800 leading-relaxed text-base sm:text-lg md:text-xl italic">
+                It has never been simple. I never received anything the easy way. 
+                Yet, I cherish every sorrow I went through, because it shaped my strength 
+                and taught me how to face whatever comes next with courage and grace.
+              </p>
 
-      <br />
-
-      <p className="mt-6 text-gray-800 leading-relaxed text-sm sm:text-base md:text-lg italic">
-        It has never been simple. I never received anything the easy way. 
-        Yet, I cherish every sorrow I went through, because it shaped my strength 
-        and taught me how to face whatever comes next with courage and grace.
-      </p>
-
-      <span className="inline-block w-2 h-6 bg-[#3b1d2a] animate-pulse ml-1"></span>
-    </div>
-  </div>
-</div>
-
+                <span className="inline-block w-2 h-6 bg-[#3b1d2a] animate-pulse ml-1"></span>
+              </div>
+            </div>
+          </div>
 
           {/* RIGHT – TIMELINE */}
             <div
